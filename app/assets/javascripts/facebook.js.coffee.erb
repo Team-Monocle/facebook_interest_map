@@ -7,7 +7,7 @@ jQuery ->
     cache: true
 
   window.fbAsyncInit = ->
-    FB.init(appId: '497165007049480', cookie:true)
+    FB.init(appId: <%= FACEBOOK_CONFIG['app_id'] %>, cookie:true)
 
     $('#sign_in').click (e) ->
      e.preventDefault()
@@ -18,3 +18,4 @@ jQuery ->
       FB.getLoginStatus (response) ->
         FB.logout() if response.authResponse 
       true
+
